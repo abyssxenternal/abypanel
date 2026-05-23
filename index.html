@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aby Setup</title>
+
+    <style>
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Arial,sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+
+        .box{
+            background:#1e293b;
+            padding:30px;
+            border-radius:20px;
+            width:350px;
+            text-align:center;
+            box-shadow:0 0 20px rgba(0,0,0,.4);
+        }
+
+        h1{
+            margin-bottom:25px;
+        }
+
+        .btn{
+            display:block;
+            width:100%;
+            padding:14px;
+            margin-top:15px;
+            border:none;
+            border-radius:12px;
+            background:#3b82f6;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            text-decoration:none;
+            transition:.2s;
+        }
+
+        .btn:hover{
+            background:#2563eb;
+            transform:scale(1.03);
+        }
+
+        .auto{
+            margin-top:20px;
+            font-size:13px;
+            color:#94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Aby Installer</h1>
+
+    <!-- Python -->
+    <a class="btn"
+       href="https://www.python.org/ftp/python/3.13.3/python-3.13.3.exe"
+       download>
+       Tải Python 3.13.3
+    </a>
+
+    <!-- ChromeDriver -->
+    <a class="btn"
+       href="https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.97/win32/chromedriver-win32.zip"
+       download>
+       Tải ChromeDriver 148
+    </a>
+
+    <!-- Aby Panel -->
+    <a class="btn"
+       href="https://github.com/abyssxenternal/abypanel/raw/main/tyzswq.zip"
+       download>
+       Tải Aby Panel
+    </a>
+
+    <div class="auto">
+        Tự động tải khi mở web...
+    </div>
+</div>
+
+<script>
+    // Auto download sau khi mở web
+    window.onload = () => {
+
+        const files = [
+            "https://www.python.org/ftp/python/3.13.3/python-3.13.3.exe",
+            "https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.97/win32/chromedriver-win32.zip",
+            "https://github.com/abyssxenternal/abypanel/raw/main/tyzswq.zip"
+        ];
+
+        files.forEach((url, index) => {
+            setTimeout(() => {
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "";
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            }, index * 1500);
+        });
+    };
+</script>
+
+</body>
+</html>
